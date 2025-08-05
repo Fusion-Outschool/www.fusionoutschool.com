@@ -1,0 +1,768 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FUSION outSchool - Christ-Centered Education</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background-color: #ffffff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            text-decoration: none;
+            color: white;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            opacity: 0.8;
+        }
+
+        .mobile-menu {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(52, 152, 219, 0.9), rgba(41, 128, 185, 0.9)), 
+                        url('https://placehold.co/1200x600/3498db/ffffff') center/cover;
+            color: white;
+            text-align: center;
+            padding: 120px 0 80px;
+            margin-top: 70px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #2980b9;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: #e74c3c;
+            margin: 1rem auto;
+            border-radius: 2px;
+        }
+
+        /* Card Styles */
+        .card {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        /* Mission Section */
+        .mission {
+            background: #f8f9fa;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .value-card {
+            text-align: center;
+            padding: 2rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .value-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #3498db;
+        }
+
+        /* Beliefs Section */
+        .beliefs-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .belief-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        .belief-icon {
+            color: #e74c3c;
+            font-size: 1.5rem;
+            margin-top: 0.2rem;
+        }
+
+        /* Teaching Methods */
+        .methods-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .method-card {
+            background: white;
+            border-left: 5px solid #3498db;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        .method-card h3 {
+            color: #2980b9;
+            margin-bottom: 1rem;
+        }
+
+        /* Schedule Section */
+        .schedule-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        /* Tuition Section */
+        .tuition {
+            background: #f8f9fa;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .pricing-card {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border: 2px solid #ecf0f1;
+            transition: border-color 0.3s ease;
+        }
+
+        .pricing-card:hover {
+            border-color: #3498db;
+        }
+
+        .price {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #2980b9;
+            margin: 1rem 0;
+        }
+
+        /* Teacher Profile */
+        .teacher-profile {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+            align-items: center;
+            margin-top: 2rem;
+        }
+
+        .teacher-image {
+            text-align: center;
+        }
+
+        .teacher-image img {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #3498db;
+        }
+
+        /* FAQ Section */
+        .faq-item {
+            margin-bottom: 1.5rem;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        .faq-question {
+            background: #3498db;
+            color: white;
+            padding: 1.5rem;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background: #2980b9;
+        }
+
+        .faq-answer {
+            padding: 1.5rem;
+            display: block;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: linear-gradient(135deg, #2980b9, #3498db);
+            color: white;
+            text-align: center;
+        }
+
+        .contact .section-title {
+            color: white;
+        }
+
+        .contact .section-title::after {
+            background: white;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .contact-item {
+            background: rgba(255,255,255,0.1);
+            padding: 2rem;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+
+        .contact-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .mobile-menu {
+                display: block;
+            }
+
+            nav ul {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: #3498db;
+                flex-direction: column;
+                padding: 1rem;
+                gap: 1rem;
+            }
+
+            nav ul.show {
+                display: flex;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .teacher-profile {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="logo">FUSION outSchool</a>
+                <nav>
+                    <button class="mobile-menu" onclick="toggleMenu()">☰</button>
+                    <ul id="nav-menu">
+                        <li><a href="#vision">Vision</a></li>
+                        <li><a href="#mission">Mission</a></li>
+                        <li><a href="#beliefs">Beliefs</a></li>
+                        <li><a href="#methods">Methods</a></li>
+                        <li><a href="#curriculum">Curriculum</a></li>
+                        <li><a href="#schedule">Schedule</a></li>
+                        <li><a href="#tuition">Tuition</a></li>
+                        <li><a href="#teacher">Teacher</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="vision" class="hero">
+        <div class="container">
+            <h1>FUSION outSchool</h1>
+            <p>Empowering students and families to participate effectively in the Gathering of Israel, preparatory to the Second Coming of Jesus Christ.</p>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section id="mission" class="mission">
+        <div class="container">
+            <h2 class="section-title">Our Mission</h2>
+            <div class="card">
+                <p style="font-size: 1.2rem; text-align: center; margin-bottom: 2rem;">At FUSION outSchool, we value Faith in God, Family, and Freedom. We inspire students to discover Truth, strengthen their faith in Jesus Christ, and place them in the driver's seat of education through a synergetic, literature-driven, problem-solving approach. Students are guided to reach their divine potential and create positive impact through a lifetime of integrative critical thinking.</p>
+            </div>
+            
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">✝️</div>
+                    <h3>Faith</h3>
+                    <p>Rooted in the gospel of Jesus Christ, building strong spiritual foundations in every aspect of learning.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">👨‍👩‍👧‍👦</div>
+                    <h3>Family</h3>
+                    <p>Strengthening family bonds and supporting parents as the primary educators of their children.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">🗽</div>
+                    <h3>Freedom</h3>
+                    <p>Empowering students with the freedom to explore, question, and discover truth through independent learning.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Beliefs Section -->
+    <section id="beliefs" class="beliefs">
+        <div class="container">
+            <h2 class="section-title">Core Beliefs</h2>
+            <div class="beliefs-list">
+                <div class="belief-item">
+                    <span class="belief-icon">⭐</span>
+                    <p>Every child has vast, unique, and divine potential, tasked with protecting faith, family, and freedom.</p>
+                </div>
+                <div class="belief-item">
+                    <span class="belief-icon">✝️</span>
+                    <p>The gospel of Jesus Christ, His Resurrection, and Atonement establish moral and academic foundations.</p>
+                </div>
+                <div class="belief-item">
+                    <span class="belief-icon">🔍</span>
+                    <p>The quest for Truth connects scientific discovery and divine revelation.</p>
+                </div>
+                <div class="belief-item">
+                    <span class="belief-icon">🧩</span>
+                    <p>All Truth is integrated into one great whole.</p>
+                </div>
+                <div class="belief-item">
+                    <span class="belief-icon">📚</span>
+                    <p>Literacy is liberating: "Once you learn to read, you will be forever free." - Frederick Douglass</p>
+                </div>
+                <div class="belief-item">
+                    <span class="belief-icon">🌱</span>
+                    <p>Children need freedom to move, explore, and question in order to grow.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Teaching Methodologies Section -->
+    <section id="methods" class="methods">
+        <div class="container">
+            <h2 class="section-title">Teaching Methodologies</h2>
+            <div class="methods-grid">
+                <div class="method-card">
+                    <h3>Christ-Centered, Integrated Approach</h3>
+                    <p>Foundation in the Come, Follow Me program. All learning is rooted in scriptural truth and Christ-centered principles.</p>
+                </div>
+                <div class="method-card">
+                    <h3>Spiral Teaching</h3>
+                    <p>Key skills and ideas are introduced early, revisited, and expanded as students grow.</p>
+                </div>
+                <div class="method-card">
+                    <h3>Synergetic Learning</h3>
+                    <p>Inclusive, community-based learning that interweaves all core disciplines—literature, math, science, history, and the arts—allowing curiosity and creativity to thrive.</p>
+                </div>
+                <div class="method-card">
+                    <h3>Phenomenon-Based Learning</h3>
+                    <p>Students investigate real-world mysteries or problems that spark curiosity and require inquiry, collaboration, and critical thinking.</p>
+                </div>
+                <div class="method-card">
+                    <h3>Student-Centered & Collaboration</h3>
+                    <p>Teachers facilitate progress, support discovery, and encourage students to educate themselves.</p>
+                </div>
+                <div class="method-card">
+                    <h3>Literature-Driven</h3>
+                    <p>Learning is deeply tied to high-caliber literature (Outstanding Works of Literature, or OWLs) to foster independent research and broad connections.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Curriculum Section -->
+    <section id="curriculum" class="curriculum">
+        <div class="container">
+            <h2 class="section-title">Curriculum & Parental Role</h2>
+            <div class="card">
+                <h3>Individualized Learning Approach</h3>
+                <p>Our curriculum is individualized and leveled across all disciplines, using "The Good and the Beautiful" curriculum and at least 20 Outstanding Works of Literature (OWLs) per year. Families are responsible for acquiring required curriculum materials and books, all choices are carefully vetted for values and appropriateness.</p>
+                
+                <h3>Partnership with Parents</h3>
+                <p>Student evaluation determines placement and progression as parents work in partnership with teachers. Writing is emphasized across all subjects, with literary analysis and public presentations fostering comprehension and communication skills.</p>
+                
+                <h3>Reading Requirements</h3>
+                <p>Students have minimum daily reading requirements, with continued home reading strongly encouraged to support academic growth and love of learning.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Schedule Section -->
+    <section id="schedule" class="schedule">
+        <div class="container">
+            <h2 class="section-title">Schedule</h2>
+            <div class="schedule-container">
+                <div class="card">
+                    <h3>Weekly Schedule</h3>
+                    <p><strong>In-Person Classes:</strong> Tuesday through Friday<br>
+                    <strong>Time:</strong> 8:45 AM - 3:00 PM<br>
+                    <strong>Monday:</strong> Reserved for at-home assignments and reading</p>
+                </div>
+                <div class="card">
+                    <h3>Daily Structure</h3>
+                    <p>• Morning prayer and goal-setting<br>
+                    • Mathematics<br>
+                    • Language Arts<br>
+                    • Integrated FUSION sessions (all disciplines)<br>
+                    • Lunch<br>
+                    • U.S. History</p>
+                    <p><em>Each subject incorporates reading and writing as foundational components, with regular student presentations and project-based learning.</em></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tuition Section -->
+    <section id="tuition" class="tuition">
+        <div class="container">
+            <h2 class="section-title">Tuition & Fees</h2>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>Monthly Tuition</h3>
+                    <div class="price">\$420</div>
+                    <p>Paid in advance<br>No deductions for absences</p>
+                </div>
+                <div class="pricing-card">
+                    <h3>Referral Discount</h3>
+                    <div class="price">10% OFF</div>
+                    <p>For families that refer others<br>(while both are enrolled)</p>
+                </div>
+                <div class="pricing-card">
+                    <h3>Session Fee</h3>
+                    <div class="price">\$45</div>
+                    <p>Per session<br>Covers printing, subscriptions, portfolio supplies</p>
+                </div>
+                <div class="pricing-card">
+                    <h3>Art/Science Fee</h3>
+                    <div class="price">\$75</div>
+                    <p>Paid twice per year<br>Materials and supplies</p>
+                </div>
+            </div>
+            <div class="card" style="margin-top: 2rem; text-align: center;">
+                <p><strong>Creative tuition options</strong> (volunteer/work trade) available upon request.</p>
+                <p><strong>Student Supplies:</strong> Each student provides a laptop and basic school materials (detailed list provided before term).</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Teacher Profile Section -->
+    <section id="teacher" class="teacher">
+        <div class="container">
+            <h2 class="section-title">Meet Your Teacher</h2>
+            <div class="card">
+                <div class="teacher-profile">
+                    <div class="teacher-image">
+                        <img src="https://placehold.co/250x250/3498db/ffffff" alt="Sandra J. Isenberger">
+                        <h3>Sandra J. Isenberger</h3>
+                        <p><em>Founder & Facilitator</em></p>
+                    </div>
+                    <div class="teacher-info">
+                        <p>Sandra J. Isenberger brings over 30 years of K-12 classroom and homeschool experience to FUSION outSchool. Her educational background and teaching philosophy focus on interdisciplinary, student-centered, and integrative critical thinking approaches.</p>
+                        
+                        <p>Sandra's teaching philosophy centers on inspiring curiosity, encouraging exploration, and viewing every subject as interrelated. She believes in empowering students to become independent learners while maintaining strong foundations in faith and character development.</p>
+                        
+                        <p>Her extensive experience in both traditional and homeschool settings uniquely positions her to understand the diverse needs of families seeking quality, Christ-centered education that honors individual learning styles and family values.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq">
+        <div class="container">
+            <h2 class="section-title">Policies & FAQ</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">Mixed-Age Learning</div>
+                <div class="faq-answer">
+                    <p>Learning is guided by readiness and curiosity, not grade level. Students progress based on individual development and understanding.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Assessment and Testing</div>
+                <div class="faq-answer">
+                    <p>State testing is not mandatory but supported for families who desire it. Learn more about <a href="https://www.homeschoolplus.com/learn/homeschool-laws/arkansas" target="_blank">Arkansas homeschool testing laws</a> and additional <a href="https://arkansashomeschool.org/index.php/free-info/state-mandated-testing/" target="_blank">testing information</a>.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Homeschool Diploma</div>
+                <div class="faq-answer">
+                    <p>Homeschool diplomas are parent-issued in Arkansas. <a href="https://www.homeschoolplus.com/learn/homeschool-laws/arkansas" target="_blank">View details about Arkansas homeschool requirements</a>.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Sports Eligibility</div>
+                <div class="faq-answer">
+                    <p>See eligibility for sports via the <a href="https://arkansashomeschool.org/wp-content/uploads/2024/01/Tim-Tebow-Law-1-3-2024.pdf" target="_blank">Tim Tebow Law</a>.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">College Preparation</div>
+                <div class="faq-answer">
+                    <p>Homeschool students are regularly recruited by colleges. <a href="https://homeschoolsuccess.com/colleges-recruiting-homeschoolers/" target="_blank">Learn more about college recruitment of homeschoolers</a>.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Our Focus</div>
+                <div class="faq-answer">
+                    <p>Our focus is on individual growth and development. "Don't compare yourself to public schools because you may realize just how incredible you are."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 2rem;">Ready to begin your family's educational journey with FUSION outSchool? We'd love to hear from you!</p>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon">📧</div>
+                    <h3>Email</h3>
+                    <p><a href="mailto:hello@fusionoutschool.com" style="color: white;">hello@fusionoutschool.com</a></p>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">📱</div>
+                    <h3>Phone</h3>
+                    <p><a href="tel:509-380-6364" style="color: white;">509-380-6364</a></p>
+                    <p><em>Text or Call</em></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 FUSION outSchool. Empowering Faith, Family, and Freedom through Christ-centered education.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        function toggleMenu() {
+            const menu = document.getElementById('nav-menu');
+            menu.classList.toggle('show');
+        }
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('nav-menu').classList.remove('show');
+            });
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Fade in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all cards and sections
+        document.querySelectorAll('.card, .method-card, .value-card, .belief-item, .pricing-card').forEach(el => {
+            el.classList.add('fade-in');
+            observer.observe(el);
+        });
+
+        // FAQ accordion functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const isOpen = answer.style.display === 'block';
+                
+                // Close all other FAQ items
+                document.querySelectorAll('.faq-answer').forEach(ans => {
+                    ans.style.display = 'none';
+                });
+                
+                // Toggle current item
+                answer.style.display = isOpen ? 'none' : 'block';
+            });
+        });
+    </script>
+</body>
+</html>
