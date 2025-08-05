@@ -78,8 +78,8 @@
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(52, 152, 219, 0.9), rgba(41, 128, 185, 0.9)), 
-                        url('https://placehold.co/1200x600/3498db/ffffff') center/cover;
+            background: linear-gradient(rgba(52, 152, 219, 0.9), rgba(41, 128, 185, 0.4)), 
+                        url('https://pub-ff92dd81bac74421977526b3aaf1374a.r2.dev/assets/images/background-hero.jpeg') center/cover;
             color: white;
             text-align: center;
             padding: 120px 0 80px;
@@ -395,9 +395,38 @@
             opacity: 1;
             transform: translateY(0);
         }
+
+        /* Floating Registration Button */
+        .registration-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1001;
+        }
+
+        .registration-button a {
+            background: #e74c3c;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .registration-button a:hover {
+            background: #c0392b;
+            transform: translateY(-3px);
+        }
     </style>
 </head>
 <body>
+    <!-- Floating Registration Button -->
+    <div class="registration-button">
+        <a href="https://forms.gle/rYNrr6TEFaMbCjjj8" target="_blank">Register Now</a>
+    </div>
     <!-- Header -->
     <header>
         <div class="container">
