@@ -581,7 +581,7 @@
                     <p>Scripture is the academic spine of every unit. Every required subject is taught through and from the scriptural text. Theology does not compete with academics here.</p>
                     <br>
                     <p><strong>It is the organizing principle.</strong></p>
-                    <button class="expand-btn" onclick="toggleCard(this.closest('.expandable-card').querySelector('.card-preview'))">Read Less ▲</button>
+                    <button class="expand-btn" onclick="toggleCard(this)">Read Less ▲</button>
                 </div>
             </div>
 
@@ -599,7 +599,7 @@
                     <br>
                     <p>Revelatory inquiry is not mysticism.</p>
                     <p><strong>It is a disciplined habit of asking whether truth is speaking, and being quiet enough to hear it.</strong></p>
-                    <button class="expand-btn" onclick="toggleCard(this.closest('.expandable-card').querySelector('.card-preview'))">Read Less ▲</button>
+                   <button class="expand-btn" onclick="toggleCard(this)">Read Less ▲</button>
                 </div>
             </div>
 
@@ -626,7 +626,7 @@
                     <p>Students work inside their texts — writing in margins, diagramming sentences, debating which word in a chapter is doing the most work, defending claims with evidence from two texts written thousands of years apart.</p>
                     <br>
                     <p><strong>We are not building students who have learned things. We are building students who have learned how to learn — and who have discovered, through the words themselves, that learning is an act of reverence.</strong></p>
-                    <button class="expand-btn" onclick="toggleCard(this.closest('.expandable-card').querySelector('.card-preview'))">Read Less ▲</button>
+                   <button class="expand-btn" onclick="toggleCard(this)">Read Less ▲</button>
                 </div>
             </div>
 
@@ -651,7 +651,7 @@
                     <p>No two students learn at exactly the same pace or in exactly the same way. Curriculum is selected for each child individually — chosen to <strong>honor</strong> where they are and to <strong>challenge</strong> them toward what they have not yet reached.</p>
                     <br>
                     <p><strong>We don't fit students to a curriculum. We find the curriculum worthy of the student.</strong></p>
-                    <button class="expand-btn" onclick="toggleCard(this.closest('.expandable-card').querySelector('.card-preview'))">Read Less ▲</button>
+                   <button class="expand-btn" onclick="toggleCard(this)">Read Less ▲</button>
                 </div>
             </div>
 
@@ -677,7 +677,7 @@
                     </ul>
                     <br>
                     <p><strong>If you are looking for a place to send your child so that education is handled, this is not that place. If you are looking for a partner in the most important work you will ever do, you have found it.</strong></p>
-                    <button class="expand-btn" onclick="toggleCard(this.closest('.expandable-card').querySelector('.card-preview'))">Read Less ▲</button>
+                    <button class="expand-btn" onclick="toggleCard(this)">Read Less ▲</button>
                 </div>
             </div>
 
@@ -698,7 +698,7 @@
                     <p>Where a second grader watches an eighth grader defend a claim under questioning and understands, without being told, what it looks like to think seriously.</p>
                     <br>
                     <p><strong>We are not preparing students to perform. We are preparing them to stand behind what they know.</strong></p>
-                    <button class="expand-btn" onclick="toggleCard(this.closest('.expandable-card').querySelector('.card-preview'))">Read Less ▲</button>
+                    <button class="expand-btn" onclick="toggleCard(this)">Read Less ▲</button>
                 </div>
             </div>
 
@@ -729,20 +729,13 @@
                     <p>Every session opens and closes with prayer. The opening asks the Lord to help them know. The closing asks for help applying what was found. Gratitude runs around the outside of everything — not as procedure, but as the acknowledgment of where truth comes from.</p>
                     <br>
                     <p><strong>Your child will not be told what to think here. They will be taught how to pursue truth — and trusted to find it.</strong></p>
-                    <button class="expand-btn" onclick="toggleCard(this.closest('.expandable-card').querySelector('.card-preview'))">Read Less ▲</button>
+                    <button class="expand-btn" onclick="toggleCard(this)">Read Less ▲</button>
                 </div>
             </div>
 
         </div>
     </div>
-    function toggleCard(el) {
-    const card = el.closest('.expandable-card');
-    const preview = card.querySelector('.card-preview');
-    const full = card.querySelector('.card-full');
-    const isExpanded = full.style.display === 'block';
-    full.style.display = isExpanded ? 'none' : 'block';
-    preview.style.display = isExpanded ? 'block' : 'none';
-}
+ 
 </section>
 
     <!-- Curriculum Section -->
@@ -983,6 +976,15 @@
                 answer.style.display = isOpen ? 'none' : 'block';
             });
         });
+        // Expandable cards
+function toggleCard(el) {
+    const card = el.closest('.expandable-card');
+    const preview = card.querySelector('.card-preview');
+    const full = card.querySelector('.card-full');
+    const isExpanded = full.style.display === 'block';
+    full.style.display = isExpanded ? 'none' : 'block';
+    preview.style.display = isExpanded ? 'block' : 'none';
+}
     </script>
 </body>
 </html>
