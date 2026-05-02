@@ -735,8 +735,8 @@
 
         </div>
     </div>
-    function toggleCard(previewEl) {
-    const card = previewEl.closest('.expandable-card');
+    function toggleCard(el) {
+    const card = el.closest('.expandable-card');
     const preview = card.querySelector('.card-preview');
     const full = card.querySelector('.card-full');
     const isExpanded = full.style.display === 'block';
