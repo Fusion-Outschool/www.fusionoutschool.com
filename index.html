@@ -775,11 +775,7 @@
 
     </div>
 </section>
-                So the tuition section is currently buried inside an accordion FAQ item. That's the first thing to fix — pricing should never be hidden behind a click. Families who don't see a number quickly assume they can't afford it and leave.
-Here's what I recommend and the code to do it:
-
-Pull tuition completely out of the FAQ and give it its own section — the one that already exists in your page structure with the id="tuition" anchor. You already have the CSS for .tuition, .pricing-grid, and .pricing-card. We're just replacing the content and adding two new blocks.
-Replace your existing tuition section code with this:
+               
 html<section id="tuition" class="tuition">
     <div class="container">
         <h2 class="section-title">Tuition & Fees</h2>
@@ -787,7 +783,7 @@ html<section id="tuition" class="tuition">
         <!-- EFA Headline Block -->
         <div class="card" style="text-align: center; margin-bottom: 2rem; border-left: 5px solid #e74c3c; padding: 2rem;">
             <h3 style="color: #e74c3c; margin-bottom: 1rem;">For qualifying Arkansas families, tuition and all required school expenses are fully covered by the Arkansas Education Freedom Account (EFA) — with funds remaining for your student's required uniform.</h3>
-            <p>Every K–12 student in Arkansas is eligible. The EFA provides <strong>$6,864 per student per year</strong>, deposited quarterly into a ClassWallet account. FUSION outSchool is a participating private school. <strong>Your family's cost can be zero.</strong></p>
+            <p>Every K–12 student in Arkansas is eligible. The EFA provides <strong>$6,864 per student per year</strong>, deposited quarterly into a ClassWallet account. ZION outSchool is a participating private school. <strong>Your family's out of pocket cost can be zero.</strong></p>
             <p style="margin-top: 1rem;"><a href="https://dese.ade.arkansas.gov/Offices/office-of-school-choice-and-parent-empowerment/education-freedom-accounts" target="_blank" style="color: #e74c3c; font-weight: bold;">Apply for the EFA — Applications open through June 1 →</a></p>
         </div>
 
@@ -826,8 +822,16 @@ html<section id="tuition" class="tuition">
         <!-- EFA How It Works Block -->
         <div class="card" style="margin-top: 2rem; background: #f8f9fa;">
             <h3>How the EFA Works</h3>
-            <p>Arkansas's Education Freedom Account deposits <strong>$1,716 per quarter</strong> into your ClassWallet account. You direct those funds to FUSION outSchool for tuition and unit fees. Remaining funds can be applied toward your student's scrubs and other approved educational expenses.</p>
-            <p style="margin-top: 1rem;"><strong>Applications for the 2026–2027 school year are open through June 1.</strong> <a href="https://dese.ade.arkansas.gov/Offices/office-of-school-choice-and-parent-empowerment/education-freedom-accounts" target="_blank">Apply at the Arkansas Department of Education →</a></p>
+            <p>Arkansas's Education Freedom Account deposits <strong>$1,716 per quarter</strong> into your ClassWallet account. You direct those funds to ZION outSchool for tuition and unit fees. Remaining funds can be applied toward your student's scrubs and other approved educational expenses.</p>
+            <p style="margin-top: 1rem;">
+    <strong>Applications for the 2026–2027 school year are open through June 1.</strong> 
+    <a href="https://dese.ade.arkansas.gov/Offices/office-of-school-choice-and-parent-empowerment/education-freedom-accounts" target="_blank">
+        Apply at the Arkansas Department of Education →
+    </a>
+</p>
+<div style="margin-top: 1rem; padding: 1rem; background: #fff3cd; border-left: 4px solid #e6a817; border-radius: 4px;">
+    <p><strong>⚠️ Already have an EFA? You must renew every year.</strong> Funding is not automatically continued. Returning families complete their renewal survey in ClassWallet before June 1. Missing this deadline means losing funding for the entire school year.</p>
+</div>
             <p style="margin-top: 1rem; font-size: 0.9rem; color: #666;"><em>Unit fees are invoiced at the start of each unit. Student supplies list provided prior to the start of term.</em></p>
         </div>
 
