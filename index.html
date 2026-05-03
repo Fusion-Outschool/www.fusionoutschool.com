@@ -775,6 +775,64 @@
 
     </div>
 </section>
+                So the tuition section is currently buried inside an accordion FAQ item. That's the first thing to fix — pricing should never be hidden behind a click. Families who don't see a number quickly assume they can't afford it and leave.
+Here's what I recommend and the code to do it:
+
+Pull tuition completely out of the FAQ and give it its own section — the one that already exists in your page structure with the id="tuition" anchor. You already have the CSS for .tuition, .pricing-grid, and .pricing-card. We're just replacing the content and adding two new blocks.
+Replace your existing tuition section code with this:
+html<section id="tuition" class="tuition">
+    <div class="container">
+        <h2 class="section-title">Tuition & Fees</h2>
+
+        <!-- EFA Headline Block -->
+        <div class="card" style="text-align: center; margin-bottom: 2rem; border-left: 5px solid #e74c3c; padding: 2rem;">
+            <h3 style="color: #e74c3c; margin-bottom: 1rem;">For qualifying Arkansas families, tuition and all required school expenses are fully covered by the Arkansas Education Freedom Account (EFA) — with funds remaining for your student's required uniform.</h3>
+            <p>Every K–12 student in Arkansas is eligible. The EFA provides <strong>$6,864 per student per year</strong>, deposited quarterly into a ClassWallet account. FUSION outSchool is a participating private school. <strong>Your family's cost can be zero.</strong></p>
+            <p style="margin-top: 1rem;"><a href="https://dese.ade.arkansas.gov/Offices/office-of-school-choice-and-parent-empowerment/education-freedom-accounts" target="_blank" style="color: #e74c3c; font-weight: bold;">Apply for the EFA — Applications open through June 1 →</a></p>
+        </div>
+
+        <!-- Fee Table Block -->
+        <div class="pricing-grid">
+            <div class="pricing-card">
+                <h3>Monthly Tuition</h3>
+                <div class="price">$570</div>
+                <p>Paid in advance<br>No deductions for absences</p>
+            </div>
+            <div class="pricing-card">
+                <h3>Unit Fee</h3>
+                <div class="price">$135</div>
+                <p>Per unit × 6 units per year<br>Covers all books, materials, printing, subscriptions, and portfolio supplies</p>
+            </div>
+            <div class="pricing-card" style="border: 2px solid #e74c3c;">
+                <h3>Annual Total</h3>
+                <div class="price">$6,510</div>
+                <p>Fully covered by EFA<br>for qualifying families</p>
+            </div>
+        </div>
+
+        <!-- Uniform + Referral Block -->
+        <div class="schedule-container" style="margin-top: 2rem;">
+            <div class="card">
+                <h3>Required Uniform</h3>
+                <p>Students wear scrubs in <strong>navy blue, dusty blue, or golden yellow</strong> — their choice. Scrubs are functional, professional, and EFA-eligible. Families using the Education Freedom Account can purchase their student's uniform through ClassWallet with remaining EFA funds after tuition.</p>
+            </div>
+            <div class="card">
+                <h3>Referral Discount</h3>
+                <div class="price" style="font-size: 2rem; color: #3498db; font-weight: bold; margin: 0.5rem 0;">10% OFF</div>
+                <p>Families who refer another enrolling family receive 10% off monthly tuition for as long as both families remain enrolled. Discount applies to tuition only.</p>
+            </div>
+        </div>
+
+        <!-- EFA How It Works Block -->
+        <div class="card" style="margin-top: 2rem; background: #f8f9fa;">
+            <h3>How the EFA Works</h3>
+            <p>Arkansas's Education Freedom Account deposits <strong>$1,716 per quarter</strong> into your ClassWallet account. You direct those funds to FUSION outSchool for tuition and unit fees. Remaining funds can be applied toward your student's scrubs and other approved educational expenses.</p>
+            <p style="margin-top: 1rem;"><strong>Applications for the 2026–2027 school year are open through June 1.</strong> <a href="https://dese.ade.arkansas.gov/Offices/office-of-school-choice-and-parent-empowerment/education-freedom-accounts" target="_blank">Apply at the Arkansas Department of Education →</a></p>
+            <p style="margin-top: 1rem; font-size: 0.9rem; color: #666;"><em>Unit fees are invoiced at the start of each unit. Student supplies list provided prior to the start of term.</em></p>
+        </div>
+
+    </div>
+</section>
                 <!-- Banner Image -->
 <!-- Banner Image -->
 <div style="width: 100%; margin: 3rem 0 0 0; line-height: 0;">
