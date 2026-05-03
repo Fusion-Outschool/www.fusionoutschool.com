@@ -324,6 +324,59 @@
         }
 
         /* FAQ Section */
+        .faq-cluster {
+    margin-bottom: 0.75rem;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+}
+
+.cluster-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    background: #2E5984;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.cluster-header:hover {
+    background: #1E3F66;
+}
+
+.cluster-label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: white;
+    margin: 0;
+}
+
+.cluster-chevron {
+    color: #e0b555;
+    font-size: 0.85rem;
+    transition: transform 0.3s ease;
+    display: inline-block;
+}
+
+.cluster-chevron.open {
+    transform: rotate(180deg);
+}
+
+.cluster-body {
+    padding: 1rem;
+    background: #f8f9fa;
+}
+
+.cluster-body .faq-item {
+    margin-bottom: 0.75rem;
+}
+
+.cluster-body .faq-item:last-child {
+    margin-bottom: 0;
+}
         .faq-item {
             margin-bottom: 1.5rem;
             background: white;
@@ -1332,6 +1385,13 @@ function toggleCard(el) {
     const isExpanded = full.style.display === 'block';
     full.style.display = isExpanded ? 'none' : 'block';
     preview.style.display = isExpanded ? 'block' : 'none';
+}
+        function toggleCluster(header) {
+    const body = header.nextElementSibling;
+    const chevron = header.querySelector('.cluster-chevron');
+    const isOpen = body.style.display === 'block';
+    body.style.display = isOpen ? 'none' : 'block';
+    chevron.classList.toggle('open', !isOpen);
 }
     </script>
 </body>
