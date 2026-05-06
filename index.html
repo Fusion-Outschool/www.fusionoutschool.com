@@ -1391,7 +1391,7 @@
                 Beyond academics, she has also developed a love for studying scripture, which is thoughtfully integrated into her education. Most importantly, this school has helped her come out of her shell and shown her that learning can be joyful and fulfilling. We are incredibly grateful for the positive impact Zion OutSchool has had on her life."
             </p>
             <div style="width: 40px; height: 2px; background: #e0b555; margin-bottom: 1rem;"></div>
-            <p style="color: #e0b555; font-weight: bold; font-size: 1rem;">— Betty Jo Smith, Parent</p>
+            <p style="color: #e0b555; font-weight: bold; font-size: 1rem;">— Betty Jo Smith, Parent of a 6th Grader</p>
         </div>
 
         <!-- Supporting Testimonials Grid -->
@@ -1424,12 +1424,56 @@
         </div>
 
         <!-- Student Voice -->
-        <div style="margin-top: 3rem; text-align: center; padding: 2rem; border-top: 2px solid #e0b555;">
-            <p style="font-size: 1.1rem; font-style: italic; color: #2E5984; line-height: 1.8; max-width: 700px; margin: 0 auto 1rem auto;">
-                "[A student quote here — in their own words.]"
+       <!-- Student Voice — Rotating Quotes -->
+<div style="margin-top: 3rem; padding: 2rem; border-top: 2px solid #e0b555;">
+    <h3 style="text-align: center; color: #2E5984; margin-bottom: 2rem; font-size: 1.2rem; letter-spacing: 0.1em; text-transform: uppercase;">In Their Own Words</h3>
+    
+    <div style="position: relative; max-width: 700px; margin: 0 auto; text-align: center; min-height: 120px;">
+        
+        <!-- Quotes -->
+        <div class="student-quote" style="display: block;">
+            <p style="font-size: 1.1rem; font-style: italic; color: #2E5984; line-height: 1.8; margin-bottom: 1rem;">
+                "[Student quote 1 here — in their own words, unpolished.]"
             </p>
             <p style="color: #e0b555; font-weight: bold;">— [Student first name], [grade] grader</p>
         </div>
+
+        <div class="student-quote" style="display: none;">
+            <p style="font-size: 1.1rem; font-style: italic; color: #2E5984; line-height: 1.8; margin-bottom: 1rem;">
+                "[Student quote 2 here.]"
+            </p>
+            <p style="color: #e0b555; font-weight: bold;">— [Student first name], [grade] grader</p>
+        </div>
+
+        <div class="student-quote" style="display: none;">
+            <p style="font-size: 1.1rem; font-style: italic; color: #2E5984; line-height: 1.8; margin-bottom: 1rem;">
+                "[Student quote 3 here.]"
+            </p>
+            <p style="color: #e0b555; font-weight: bold;">— [Student first name], [grade] grader</p>
+        </div>
+
+        <div class="student-quote" style="display: none;">
+            <p style="font-size: 1.1rem; font-style: italic; color: #2E5984; line-height: 1.8; margin-bottom: 1rem;">
+                "[Student quote 4 here.]"
+            </p>
+            <p style="color: #e0b555; font-weight: bold;">— [Student first name], [grade] grader</p>
+        </div>
+
+    </div>
+
+    <!-- Controls -->
+    <div style="display: flex; justify-content: center; align-items: center; gap: 1.5rem; margin-top: 1.5rem;">
+        <button onclick="changeQuote(-1)" style="background: none; border: none; color: #2E5984; font-size: 1.5rem; cursor: pointer; font-weight: bold;">←</button>
+        <div id="quote-dots" style="display: flex; gap: 0.5rem;">
+            <span class="quote-dot active" onclick="goToQuote(0)" style="width: 10px; height: 10px; border-radius: 50%; background: #e0b555; cursor: pointer; display: inline-block;"></span>
+            <span class="quote-dot" onclick="goToQuote(1)" style="width: 10px; height: 10px; border-radius: 50%; background: #ccc; cursor: pointer; display: inline-block;"></span>
+            <span class="quote-dot" onclick="goToQuote(2)" style="width: 10px; height: 10px; border-radius: 50%; background: #ccc; cursor: pointer; display: inline-block;"></span>
+            <span class="quote-dot" onclick="goToQuote(3)" style="width: 10px; height: 10px; border-radius: 50%; background: #ccc; cursor: pointer; display: inline-block;"></span>
+        </div>
+        <button onclick="changeQuote(1)" style="background: none; border: none; color: #2E5984; font-size: 1.5rem; cursor: pointer; font-weight: bold;">→</button>
+    </div>
+
+</div>
 
     </div>
 </section>
@@ -1561,6 +1605,32 @@ function toggleCard(el) {
     body.style.display = isOpen ? 'none' : 'block';
     chevron.classList.toggle('open', !isOpen);
 }
+        // Student quote rotator
+let currentQuote = 0;
+const quotes = document.querySelectorAll('.student-quote');
+const dots = document.querySelectorAll('.quote-dot');
+
+function showQuote(index) {
+    quotes.forEach(q => q.style.display = 'none');
+    dots.forEach(d => d.style.background = '#ccc');
+    quotes[index].style.display = 'block';
+    dots[index].style.background = '#e0b555';
+    currentQuote = index;
+}
+
+function changeQuote(direction) {
+    let next = currentQuote + direction;
+    if (next < 0) next = quotes.length - 1;
+    if (next >= quotes.length) next = 0;
+    showQuote(next);
+}
+
+function goToQuote(index) {
+    showQuote(index);
+}
+
+// Auto-rotate every 5 seconds
+setInterval(() => changeQuote(1), 5000);
     </script>
 </body>
 </html>
