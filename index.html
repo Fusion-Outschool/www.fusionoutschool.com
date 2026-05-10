@@ -110,7 +110,25 @@
             font-size: 1.5rem;
             cursor: pointer;
         }
-
+/* "Start Here" nav button */
+.nav-cta-btn {
+    display: inline-block;
+    background: #e0b555;
+    color: #1E3F66 !important;
+    font-weight: 700 !important;
+    padding: 0.45rem 1.1rem;
+    border-radius: 50px;
+    letter-spacing: 0.02em;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    transition: background 0.2s ease, transform 0.2s ease !important;
+    opacity: 1 !important;
+}
+.nav-cta-btn:hover {
+    background: #f0c866 !important;
+    color: #1E3F66 !important;
+    opacity: 1 !important;
+    transform: translateY(-2px);
+}
         /* Hero Section */
        .hero {
     margin-top: 110px;
@@ -455,6 +473,29 @@
 
         /* Responsive Design */
        @media (max-width: 768px) {
+           /* Banner drops below header on mobile */
+.efa-banner {
+    position: static !important;
+    width: 100%;
+}
+
+/* Header sits at screen top on mobile (no banner above it) */
+header {
+    top: 0 !important;
+}
+
+/* Hero clears header only — not header + banner */
+.hero {
+    margin-top: 70px !important;
+}
+
+/* Start Here button full-width in mobile menu */
+.nav-cta-btn {
+    display: block;
+    text-align: center;
+    padding: 0.6rem 1.2rem;
+    margin: 0.25rem 0;
+}
     /* Navigation */
     .mobile-menu {
         display: block;
@@ -621,8 +662,7 @@
     <header>
         <!-- EFA Deadline Alert Banner -->
 <!-- EFA Deadline Alert Banner -->
-<div style="background: #e74c3c; color: white; text-align: center; padding: 0.75rem 1rem; font-family: 'Georgia', serif; font-size: 0.95rem; position: fixed; top: 0; width: 100%; z-index: 1002;">
-    <strong>⚠️ EFA Deadline: June 1, 2026</strong> — 
+<div class="efa-banner" style="background: #e74c3c; color: white; text-align: center; padding: 0.75rem 1rem; font-family: 'Georgia', serif; font-size: 0.95rem; position: fixed; top: 0; width: 100%; z-index: 1002;">    <strong>⚠️ EFA Deadline: June 1, 2026</strong> — 
     New families: <a href="https://dese.link/efa" target="_blank" style="color: white; font-weight: bold; text-decoration: underline;">Apply now →</a> &nbsp;|&nbsp; 
     Returning families: <a href="https://www.classwallet.com" target="_blank" style="color: white; font-weight: bold; text-decoration: underline;">Log in to ClassWallet to renew →</a>
 </div>
@@ -638,8 +678,7 @@
     <li><a href="#tuition">Tuition & EFA</a></li>
     <li><a href="#teacher">Who Teaches Here</a></li>
     <li><a href="#faq">FAQs</a></li>
-    <li><a href="#contact">Enroll</a></li>
-</ul>
+<li><a href="https://docs.google.com/forms/d/e/1FAIpQLScgr4AzNs0ZSJ3Wcl1BI7TDhshXNGPf-ojDsHcJR0gd-uiL4g/viewform" target="_blank" class="nav-cta-btn">Start Here →</a></li></ul>
                 </nav>
             </div>
         </div>
